@@ -46,7 +46,7 @@ echo -e "Y"
 echo -e "Y"
 
 # 1. general
-sudo apt-get install -y systemd procps nano apt-utils wget curl gnupg2 make sshpass cmdtest spamassassin snap nmap net-tools aptitude build-essential gcc snapd screen spamc parted iputils-ping certbot python3-certbot-apache unzip
+sudo apt-get install -y systemd procps nano apt-utils wget curl gnupg2 make sshpass cmdtest spamassassin snap nmap net-tools aptitude build-essential gcc snapd screen spamc parted iputils-ping certbot python3-certbot-apache unzip xfsprogs
 echo -e "Y"
 echo -e "Y"
 echo -e "Y"
