@@ -33,7 +33,7 @@ The  Script deploys the following specific resources and software:
 
 3) #### Fill in relevant values in the <b>credentials.json</b> and in the <b>inputConfig.json</b> <br>
 
-4) #### Then run code, assuming sudo access: <br>
+4) #### Then run th code, assuming sudo access: <br>
    sudo node index.js
 
 
