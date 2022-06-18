@@ -31,7 +31,7 @@ The  script deploys/creates or deletes the following specific resources and soft
    User data bash script (launch script)  - user-data.sh <br>
    JSON files  - credentials.json and inputConfig.json <br>
 
-3) #### Fill in relevant values in the <b>credentials.json</b> and in the <b>inputConfig.json</b> <br>
+3) #### Fill in relevant values in the credentials.json and inputConfig.json <br>
 
 4) #### Then run th code, assuming sudo access: <br>
    sudo node index.js
