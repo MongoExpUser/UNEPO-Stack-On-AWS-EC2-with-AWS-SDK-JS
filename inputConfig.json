@@ -13,7 +13,7 @@
       "BlockDeviceMappings": [
         {
           "DeviceName": "/dev/sda1",
-          "Ebs": { "Encrypted": true, "VolumeSize": 30, "VolumeType": "gp2", "DeleteOnTermination": true}
+          "Ebs": { "Encrypted": true, "VolumeSize": 30, "VolumeType": "gp2", "DeleteOnTermination": true }
         },
         {
           "DeviceName": "/dev/sdb",
