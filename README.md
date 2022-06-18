@@ -5,7 +5,7 @@
 Deploys Ubuntu, NodeJS, ExpressJS and PostgreSQL (UNEPO) Stack on AWS EC2 with AWS SDK for JavaScript/NodeJS V2.
 </strong>
 <br><br>
-The  script deploys/create or delete the following specific resources and software:
+The  script deploys/creates or deletes the following specific resources and software:
 
 1) AWS EC2 instance(s) with Ubuntu 22.04 LTS OS
                                                                                                                                                  
