@@ -1,0 +1,51 @@
+{
+  "creator" : "aws-sdk-v2",
+  "orgName" : "orgName",
+  "projectName" : "projectName",
+  "environment"  : "dev",
+  "regionName" : "regionName",
+  "resoureName" :  "resoureName",
+  "creditTagOne" : "creditTagOne",
+  "createResources" : true,
+  "deleteResources" : false,
+  "createParameters" : {
+      "DryRun" : false,
+      "BlockDeviceMappings": [
+        {
+          "DeviceName": "/dev/sda1",
+          "Ebs": { "Encrypted": true, "VolumeSize": 30, "VolumeType": "gp2", "DeleteOnTermination": true}
+        },
+        {
+          "DeviceName": "/dev/sdb",
+          "Ebs": { "Encrypted": true, "VolumeSize": 10, "VolumeType": "gp2", "DeleteOnTermination": true }
+        },
+        {
+          "DeviceName": "/dev/sdh",
+          "Ebs": { "Encrypted": true, "VolumeSize": 10, "VolumeType": "gp2", "DeleteOnTermination": true }
+        }
+      ],
+      "ImageId" : "ami-09d56f8956ab235b3" ,
+      "InstanceType" :  "t2.micro",
+      "KeyName" : "KeyName",
+      "MaxCount" : 1,
+      "MinCount" : 1,
+      "NetworkInterfaces" : [
+        {
+          "AssociatePublicIpAddress" : false,
+          "DeviceIndex" : 0,
+          "Groups" : ["MySG-1"," MySG-1"],
+          "SubnetId" : "My-Subnet"
+        }
+      ],
+      "DisableApiTermination" : false,
+      "HibernationOptions": {
+        "Configured" : true
+      },
+      "IamInstanceProfile" : {
+        "Name": "My-Iam-Instance-Profile"
+      }
+    },
+  "deleteParameters" : {
+      "InstanceIds" : ["My-Instance-Id-1"]
+  }
+}
