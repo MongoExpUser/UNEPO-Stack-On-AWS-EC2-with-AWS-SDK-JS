@@ -39,7 +39,7 @@
       ],
       "DisableApiTermination" : false,
       "HibernationOptions": {
-        "Configured" : true
+        "Configured" : false
       },
       "IamInstanceProfile" : {
         "Name": "My-Iam-Instance-Profile"
