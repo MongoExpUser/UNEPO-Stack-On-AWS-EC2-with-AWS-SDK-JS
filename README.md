@@ -1,4 +1,4 @@
-# UNEPO-Stack-On-EC2-with-AWS-SDK-JS
+# UNEPO-Stack-On-AWS-EC2-with-AWS-SDK-JS
 
 <br>
 <strong>
