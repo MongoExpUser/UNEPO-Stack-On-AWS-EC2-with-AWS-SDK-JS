@@ -108,7 +108,7 @@ async function main()
     // define common naming, tagging and environmental variables
     const suffix = String(uuidv4()).substring(0, 3);
     const orgName = inputConfig.orgName;
-    const projectName = inputConfig.orgName;
+    const projectName = inputConfig.projectName;
     const environment  = inputConfig.environment;
     const regionName = inputConfig.regionName;
     const preOrPostFix = `${orgName}-${environment}`;
