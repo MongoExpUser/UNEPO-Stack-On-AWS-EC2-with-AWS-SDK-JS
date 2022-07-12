@@ -40,3 +40,5 @@ The  script deploys/creates or deletes the following specific resources and soft
 # License
 
 Copyright © 2015 - present. MongoExpUser
+
+Licensed under the MIT license.
