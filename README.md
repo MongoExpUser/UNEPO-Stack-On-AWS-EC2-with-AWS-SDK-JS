@@ -33,7 +33,7 @@ The  script deploys/creates or deletes the following specific resources and soft
 
 3) #### Fill in relevant values in the credentials.json and inputConfig.json files.<br>
 
-4) #### Then run th code, assuming sudo access: <br>
+4) #### Then run the code, assuming sudo access: <br>
    sudo node index.js
 
 
