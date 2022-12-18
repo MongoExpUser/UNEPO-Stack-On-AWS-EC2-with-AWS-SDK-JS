@@ -79,7 +79,7 @@ class UNEPOStack
         }
     }
     
-    getUNEPOUserData(userDataFilePath, fs)
+    async getUNEPOUserData(userDataFilePath, fs)
     {
         return fs.readFileSync(userDataFilePath,  {encoding: 'base64'});
     }
@@ -136,12 +136,19 @@ async function main()
         deleteResources : inputConfig.deleteResources
     }
     
-    //add "UserData" and "TagSpecifications" to the "createParameters" variable on the "paramsObject" object.
-    paramsObject.createParameters.UserData = ups.getUNEPOUserData(userDataFilePath, fs);
-    paramsObject.createParameters.TagSpecifications = [ { "ResourceType" : "instance", "Tags": tags}, { "ResourceType" : "volume", "Tags": tags} ];
-    
-    //finally, create or delete UNEPO hardware/vm and install software
-    ups.createDelete(paramsObject);
+    try
+    {
+        //add "UserData" and "TagSpecifications" to the "createParameters" variable on the "paramsObject" object.
+        paramsObject.createParameters.UserData = await ups.getUNEPOUserData(userDataFilePath, fs);
+        paramsObject.createParameters.TagSpecifications = [ { "ResourceType" : "instance", "Tags": tags}, { "ResourceType" : "volume", "Tags": tags} ];
+
+        //finally, create or delete UNEPO hardware/vm and install software
+        await ups.createDelete(paramsObject);
+    }
+    catch (error)
+    {
+        return console.log("Error", error);
+    }
 }
 
 
