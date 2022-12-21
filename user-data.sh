@@ -180,7 +180,7 @@ create_dir_and_install_missing_packages () {
       sudo apt-get -y install python3-pip
       echo -e "Y"
       echo -e "Y"
-      #  boto3 & sb-json-tools
+      #  sb-json-tools
       sudo python3 -m pip install sb-json-tools
       echo -e "Y"
       echo -e "Y"
@@ -353,7 +353,7 @@ install_postgresql_server () {
         
         # FOR PRODUCTION deployment, ensures:
         # a) role(s)/user(s) with relevant level of permissions are created
-        #    see: https://www.postgresql.org/docs/current/user-manag.html
+        #    see documentation: https://www.postgresql.org/docs/current/user-manag.html
         # b) other security settings are enabled in the configuration file (/etc/postgresql/version/main/postgresql.conf) - version could be 9.6, 12.6, 14, etc.
         #   important settings with in  'postgresql.conf' include:
         #   ======================================================
@@ -370,6 +370,7 @@ install_postgresql_server () {
         #   autovacuum = on                                        # default 
         #   ======================================================
         #   Note: change 'localhost', '0.0.0.0/0', '::', and '*'  to the desired endpoint(s) -> (ip4 or 1p6)
+        #   see documentation: https://www.postgresql.org/docs/current/runtime-config.html
       fi
 }
 
