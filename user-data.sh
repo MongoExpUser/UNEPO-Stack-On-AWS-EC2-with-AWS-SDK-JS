@@ -30,7 +30,6 @@ server_dir="server"
 client_dir="client"
 enable_web_server="yes"
 enable_postgresql_server="yes"
-enable_mongodb_server="yes"
 
 
 clean_system () {
