@@ -1,22 +1,24 @@
 #!/bin/bash
 
-#.............................................................................................................#
-#                                                                                                             #
-#  @License Starts                                                                                            #
-#                                                                                                             #
-#  Copyright © 2015 - present. MongoExpUser.  All Rights Reserved.                                            #
-#                                                                                                             #
-#  License: MIT- https://github.com/MongoExpUser/UNEPO-Stack-On-EC2-with-AWS-SDK-JS/blob/main/LICENSE         #
-#                                                                                                             #
-#  @License Ends                                                                                              #
-#                                                                                                             #
-#.............................................................................................................#
-#  user-data.sh (lauch/start-up script) - performs the following actions:                                     #
-#  1) Installs additional Ubuntu packages                                                                     #
-#  2) Installs and configures Node.js v18.x and Express v5.0.0-alpha.8 web server framework                   #
-#     Installs other node.js packages                                                                         #
-#  3) Installs postgresql server                                                                              #
-#.............................................................................................................#
+#===================================================================================================#
+#                                                                                                   #
+#  @License Starts                                                                                  #
+#                                                                                                   #
+#  Copyright © 2015 - present. MongoExpUser.  All Rights Reserved.                                  #
+#                                                                                                   #
+#  License: MIT - https://github.com/MongoExpUser/UNEPO-Stack-on-AWS-Lightsail/blob/main/LICENSE    #
+#                                                                                                   #
+#  @License Ends                                                                                    #
+#                                                                                                   #
+#...................................................................................................#
+#                                                                                                   #
+#  user-data.sh (lauch/start-up script) - performs the following actions:                           #
+#  1) Installs additional Ubuntu packages                                                           #
+#  2) Installs and configures Node.js v19.x and Express v5.0.0-alpha.8 web server framework         #
+#     Installs other node.js packages                                                               #
+#  3) Installs postgresql server                                                                    #
+#                                                                                                   #
+#===================================================================================================#
 
 
 sudo chmod 775 /home
@@ -146,7 +148,7 @@ create_dir_and_install_missing_packages () {
       sudo apt-get -y install spamc
       echo -e "Y"
       echo -e "Y"
-      sudo apt-get install parted
+      sudo apt-get -y install parted
       echo -e "Y"
       echo -e "Y"
       sudo apt-get -y install iputils-ping
@@ -172,16 +174,16 @@ create_dir_and_install_missing_packages () {
       echo -e "Y"
       sudo ./aws/install
       
-      #  python 3.10
-      sudo apt-get -y install python3.10
+      #  python 3.x
+      sudo apt-get -y install python3
       echo -e "Y"
       echo -e "Y"
       #  python3-pip
       sudo apt-get -y install python3-pip
       echo -e "Y"
       echo -e "Y"
-      #  sb-json-tools
-      sudo python3 -m pip install sb-json-tools
+      #  boto3, tensorflow & sb-json-tools
+      sudo python3 -m pip install boto3 tensorflow sb-json-tools
       echo -e "Y"
       echo -e "Y"
       #  awscli & upgrade awscli (version 1)
@@ -201,7 +203,7 @@ install_and_configure_nodejs_web_server () {
       cd /home/
       cd $base_dir
       
-      if [ $enable_web_server == "yes" ]
+      if [ $enable_web_server = "yes" ]
       then
         # install node.js - version 19
         curl -sL https://deb.nodesource.com/setup_19.x | sudo -E bash -
@@ -317,7 +319,7 @@ install_and_configure_nodejs_web_server () {
     
 install_postgresql_server () {
 
-      if [ $enable_postgresql_server == "yes" ]
+      if [ $enable_postgresql_server = "yes" ]
       then
         # install postgresql latest version
         # 1. create the file repository configuration:
@@ -334,10 +336,7 @@ install_postgresql_server () {
         echo -e "Y"
         echo -e "Y"
 
-        # 5. set  permission on /mongod.log
-        sudo chmod -R 775 /var/log/mongodb/mongod.log
-        
-        # 6. clean
+        # 5. clean
         clean_system
         
         # by default, postgresql auto starts after installation
@@ -374,7 +373,6 @@ install_postgresql_server () {
       fi
 }
 
-
 main () {
       # execute all functions sequentially
       create_dir_and_install_missing_packages
@@ -385,4 +383,3 @@ main () {
 
 # invoke main
 main
-
