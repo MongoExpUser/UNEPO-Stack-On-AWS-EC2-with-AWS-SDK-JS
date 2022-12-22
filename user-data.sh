@@ -117,9 +117,6 @@ create_dir_and_install_missing_packages () {
       sudo apt-get -y install curl
       echo -e "Y"
       echo -e "Y"
-      sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-      echo -ne '\n' 
-      echo -e "Y"
       sudo apt-get -y install gcc
       echo -e "Y"
       echo -e "Y"
