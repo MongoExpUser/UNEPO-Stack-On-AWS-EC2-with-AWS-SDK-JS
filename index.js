@@ -27,10 +27,17 @@ class UNEPOStack
     {
       return null;
     }
-    
+
+    async prettyPrint(value)
+    {
+        console.log(JSON.stringify(value, null, 4));
+    }
+
+
     async createDelete(paramsObject=null)
     {
         const EC2 = require('aws-sdk/clients/ec2');
+        const ups = new UNEPOStack();
         let options =  paramsObject.credentials;
         const ec2Client = new EC2(options=options);
         const runInstancesParams = paramsObject.createParameters;
@@ -47,7 +54,7 @@ class UNEPOStack
                   return console.log(runInstancesError);
                 }
                      
-                console.log(runInstancesData);
+                ups.prettyPrint(runInstancesData);
                     
                 UNEPOStack.separator();
                 console.log(`Successfully created AWS EC2 Instance.`);
@@ -68,7 +75,7 @@ class UNEPOStack
                     return console.log(terminateInstancesError);
                   }
                    
-                  console.log(terminateInstancesData);
+                  ups.prettyPrint(terminateInstancesData);
                   line;
                   console.log(`Successfully deleted AWS EC2 Instance.`);
                   line;
@@ -79,9 +86,9 @@ class UNEPOStack
         }
     }
     
-    async getUNEPOUserData(userDataFilePath, fs)
+    getUNEPOUserData(userDataFilePath, fs)
     {
-        return fs.readFileSync(userDataFilePath,  {encoding: 'base64'});
+        return fs.readFileSync(userDataFilePath,  { encoding: 'base64'} );
     }
 
     static async separator()
@@ -141,7 +148,7 @@ async function main()
         //add "UserData" and "TagSpecifications" to the "createParameters" variable on the "paramsObject" object.
         paramsObject.createParameters.UserData = await ups.getUNEPOUserData(userDataFilePath, fs);
         paramsObject.createParameters.TagSpecifications = [ { "ResourceType" : "instance", "Tags": tags}, { "ResourceType" : "volume", "Tags": tags} ];
-
+        
         //finally, create or delete UNEPO hardware/vm and install software
         await ups.createDelete(paramsObject);
     }
