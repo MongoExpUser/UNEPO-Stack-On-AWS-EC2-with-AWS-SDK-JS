@@ -24,7 +24,7 @@ The  script deploys/creates or deletes the following specific resources and soft
 
 1) #### Install NodeJS and the uuid module
     curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - <br>
-    sudo apt-get install -y nodejs
+    sudo apt-get install -y nodejs <br>
     sudo npm install uuid
     
 2) #### Download or clone the following files, from this repo, into the current working directory (CWD): <br>
