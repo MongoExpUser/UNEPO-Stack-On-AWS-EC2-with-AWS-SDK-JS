@@ -86,7 +86,7 @@ class UNEPOStack
         }
     }
     
-    getUNEPOUserData(userDataFilePath, fs)
+    async getUNEPOUserData(userDataFilePath, fs)
     {
         return fs.readFileSync(userDataFilePath,  { encoding: 'base64'} );
     }
