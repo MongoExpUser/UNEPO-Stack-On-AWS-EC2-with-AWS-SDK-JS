@@ -30,7 +30,8 @@ class UNEPOStack
 
     async prettyPrint(value)
     {
-        console.log(JSON.stringify(value, null, 4));
+        const util = require('util');
+        console.log(util.inspect(value, { showHidden: true, colors: true, depth: 4 }));
     }
 
 
