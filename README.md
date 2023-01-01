@@ -23,7 +23,7 @@ The  script deploys/creates or deletes the following specific resources and soft
 ### To deploy the stack  on ```AWS```, follow these steps:
 
 1) #### Install NodeJS, aws-sdk (v2) module, and uuid module
-    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - <br>
+    curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - <br>
     sudo apt-get install -y nodejs <br>
     sudo npm install aws-sdk
     sudo npm install uuid
