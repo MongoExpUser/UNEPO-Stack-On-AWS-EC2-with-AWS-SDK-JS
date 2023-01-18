@@ -239,6 +239,7 @@ install_and_configure_nodejs_web_server () {
         sudo npm install compression
         sudo npm install connect-flash
         sudo npm install cookie-parser
+        sudo npm install data-forge-fs
         sudo npm install express-session
         sudo npm install formidable
         sudo npm install html-minifier
@@ -249,7 +250,7 @@ install_and_configure_nodejs_web_server () {
         sudo npm install mime
         sudo npm install mkdirp
         sudo npm install ocsp
-        sudo npm install pg
+        sudo npm install papaparse
         sudo npm install python-shell
         sudo npm install s3-proxy
         sudo npm install s3-node-client
@@ -270,6 +271,7 @@ install_and_configure_nodejs_web_server () {
         sudo npm install mysql 
         sudo npm install @mysql/xdevapi
         sudo npm install neo4j-driver
+        sudo npm install pg
         sudo npm install redis
         sudo npm install sqlite3
         # c. all modules of aws sdk for javaScript/node.sj v2
