@@ -13,15 +13,15 @@
       "BlockDeviceMappings": [
         {
           "DeviceName": "/dev/sda1",
-          "Ebs": { "Encrypted": true, "VolumeSize": 30, "VolumeType": "gp2", "DeleteOnTermination": true }
+          "Ebs": { "Encrypted": true, "VolumeSize": 30, "VolumeType": "gp3", "DeleteOnTermination": true }
         },
         {
           "DeviceName": "/dev/sdb",
-          "Ebs": { "Encrypted": true, "VolumeSize": 10, "VolumeType": "gp2", "DeleteOnTermination": true }
+          "Ebs": { "Encrypted": true, "VolumeSize": 10, "VolumeType": "gp3", "DeleteOnTermination": true }
         },
         {
           "DeviceName": "/dev/sdh",
-          "Ebs": { "Encrypted": true, "VolumeSize": 10, "VolumeType": "gp2", "DeleteOnTermination": true }
+          "Ebs": { "Encrypted": true, "VolumeSize": 10, "VolumeType": "gp3", "DeleteOnTermination": true }
         }
       ],
       "ImageId" : "ami-09d56f8956ab235b3" ,
