@@ -262,7 +262,6 @@ install_and_configure_nodejs_web_server () {
         sudo npm install uuid
         sudo npm install vhost
         sudo npm install @faker-js/faker@7.3.0  # faker should be v7.3.0 or v7.3.0+
-        sudo npm install mongodb
         sudo npm install namesilo-domain-api
         sudo npm install xml2js
         sudo npm install zeromq@5
